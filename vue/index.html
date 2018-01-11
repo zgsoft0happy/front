@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vue.js</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>{{name}}</h1>
+	</div>
+	<script src="app.js"></script>
+
+	<div id="vue-app1">
+		<h1>many prop</h1>
+		<p>name: {{ name }}      </p>
+		<p>age : {{ age }}	</p>
+		<p>job: {{ job }}	</p>
+	</div>
+	<script src="app1.js"></script>
+
+	<div id="vue-app2">
+		<h1>method</h1>
+		<p> {{greet()}} </p>
+		<p> {{greet1('afternoon')}} </p>
+	</div>
+	<script src="app2.js"></script>
+
+	<div id="vue-app3">
+		<h1>data bind</h1>
+		<p> name : {{name}}</p>
+		<p><a v-bind:href="website">baidu</a></p>
+		<p>name:<input type="text" name="name" v-bind:value="name"></p>
+		<p v-html="websiteTag"></p>
+	</div>
+	<script src="app3.js"></script>
+
+	<div id="vue-app4">
+		<h1> Click Events</h1>
+	<!--
+		<button v-on:click="age++">add one year</button>
+		<button v-on:click="age--">subtract one year</button>
+	-->
+	<!--
+		<button v-on:click="add">add one year</button>
+		<button v-on:click="subtract">subtract one year</button>
+		<button v-on:dblclick="addten">add ten year</button>
+		<button v-on:dblclick="subtractten">subtract ten year</button>
+	-->
+		<button @click="addnew(1)">add one year</button>
+		<button v-on:click="subtractnew(1)">subtract one year</button>
+		<button v-on:dblclick="addnew(10)">add ten year</button>
+		<button v-on:dblclick="subtractnew(10)">subtract ten year</button>
+		<p>My age is {{age}} </p>
+		<div id="canvas" v-on:mousemove="updateXY">
+			<p>{{x}}, {{y}}</p>
+		</div>
+	</div>
+	<script src="app4.js"></script>
+</body>
+</html>
