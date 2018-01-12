@@ -5,5 +5,10 @@ new Vue({
 		job:"developer",
 		website:"http://www.baidu.com",
 		websiteTag:"<a href='www.baidu.com'>baidu</a>"
+	},
+	methods: {
+		alert1: function() {
+			alert('Hello World!')
+		}
 	}
 })
