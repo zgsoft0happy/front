@@ -117,7 +117,7 @@
 			change color
 		</button>
 		<button v-on:click="changeLength = !changeLength">
-			change changeLength
+			change length
 		</button>
 		<div v-bind:class="compClasses">
 			<span>Herry</span>
@@ -125,6 +125,58 @@
 
 	</div>
 	<script src="app8.js"></script>
+
+	<div id="vue-app9">
+		<h1>v-if条件</h1>
+		<button v-on:click="error = !error">Toggle error</button>
+		<button v-on:click="success = !success">Toggle success</button>
+		<p v-if="error">网络连接错误： 404</p>
+		<p v-else-if="success">网络连接成功： 200</p>
+
+		<p v-show="error">网路连接失败： 404</p>
+		<p v-show="success">网络连接成功： 200</p>
+	</div>
+	<script src="app9.js" charset="utf-8"></script>
+
+	<div id="vue-app10">
+		<h1> v-for循环 </h1>
+		<!-- 数组下标获取 -->
+
+		{{characters[0]}},{{characters[1]}},{{characters[2]}}
+
+		<ul>
+			<li v-for="character in characters">
+				{{ character }}
+			</li>
+		</ul>
+
+		<ul>
+			<div>
+				<li v-for="(user,index) in users">
+					{{index + 1}}.{{user.name}} - {{user.age}}
+				</li>
+			</div>
+		</ul>
+
+		<ul>
+			<template>
+				<li v-for="(user,index) in users">
+					{{index + 1}}.{{user.name}} - {{user.age}}
+				</li>
+			</template>
+		</ul>
+
+		<ul>
+			<template v-for="(user,index) in users">
+				<div v-for="(val,key) in user">
+					<p>{{key}} - {{val}}</p>
+				</div>
+			</template>
+		</ul>
+
+
+	</div>
+	<script src="app10.js" charset="utf-8"></script>
 
 </body>
 </html>
